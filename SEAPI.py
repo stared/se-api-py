@@ -10,7 +10,7 @@ class SEAPI():
 
         self.api_address = "http://api.stackexchange.com"
         self.api_version = "2.1"
-        self.key = ""
+        self.key = "o*kk9*eL4o0QSbBWTpIf3A(("
         self.access_token = ""
 
         if self.key:
