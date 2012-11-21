@@ -77,5 +77,5 @@ class SEAPI():
             res += self.fetch_one(command, page = i, **kwargs)
             if not self.last_status['has_more']:
                 break
-        return res:
+        return res
 
