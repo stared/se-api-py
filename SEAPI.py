@@ -6,6 +6,7 @@ except:
 
 class SEAPI():
     def __init__(self):
+        # also allow setting default command or default parameters?
         self.default_params = {"pagesize":100}
 
         self.api_address = "http://api.stackexchange.com"
@@ -48,6 +49,7 @@ class SEAPI():
             self._replace_placeholders(command, **kwargs))
         parameters = self.default_params
         parameters.update(kwargs)
+        # to fix: in params there unintentionally thinga like ids = [1,2,3]
 
         r = requests.get(url, params = parameters)
         data = json.loads(r.content)
@@ -58,20 +60,22 @@ class SEAPI():
         return data['items']
     
 
-    def fetch(self, command, starting_page = 1, page_limit = 1000, **kwargs):
+    def fetch(self, command, starting_page = 1, page_limit = 1000, print_progress = True, **kwargs):
         """Returns all pages (withing the limit) of results for a given command;
         EXAMPLE -> check for fetch_one (without 'page' parameter!)
         NOTE: Here is a lot of room for improvements and additional features, e.g.:
         - separating also by large {ids} lists
         - gevent for concurrency
-        - measuring time per response and keeping it optimal (not to get banned)"""
+        - measuring time per response and keeping it optimal (not to get banned),
+        - check page limit?"""
         res = []
-        print "Fetching pages: ",
+        if print_progress:
+            print "Fetching pages: ",
         for i in xrange(starting_page, starting_page + page_limit):
-            print i,
+            if print_progress:
+                print i,
             res += self.fetch_one(command, page = i, **kwargs)
             if not self.last_status['has_more']:
                 break
-        return res
-
+        return res:
 
