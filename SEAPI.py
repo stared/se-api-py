@@ -47,7 +47,7 @@ class SEAPI():
         >>> seapi.fetch_one("posts", order=desc, sort=votes, site=stackoverflow, page=3)"""
         url = "%s/%s/%s" % (self.api_address, self.api_version,
             self._replace_placeholders(command, **kwargs))
-        parameters = self.default_params
+        parameters = self.default_params.copy()
         parameters.update(kwargs)
         # to fix: in params there unintentionally thinga like ids = [1,2,3]
 
