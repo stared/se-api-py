@@ -5,7 +5,7 @@ A lightweight Python wrapper for [StackExchange API](http://api.stackexchange.co
 
 Build with [Requests](http://docs.python-requests.org/).
 
-Example of ussage:
+Example of usage:
 
     import SEAPI
     se = SEAPI.SEAPI()

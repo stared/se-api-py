@@ -18,7 +18,7 @@ class SEAPI():
 
         if self.key:
             self.default_params['key'] = self.key
-        if self.key:
+        if self.access_token:
             self.default_params['access_token'] = self.access_token
 
         self.last_call = ["", {}]
