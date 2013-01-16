@@ -4,8 +4,9 @@ se-api-py
 A lightweight Python wrapper for [StackExchange API](http://api.stackexchange.com/) v2.1.
 Build with [Requests](http://docs.python-requests.org/).
 
-It uses:
-	* se.fetch[_one](command, **parameters)
+General philosophy of usage:
+
+	* se.fetch\[_one\](command, **parameters)
 	* parameters as in the documentation
 	* in the command, "{something}" and "{somethings}" are treated as placeholders for an int/str or a list of int/str, respectively
 
