@@ -6,9 +6,9 @@ Build with [Requests](http://docs.python-requests.org/).
 
 General philosophy of usage:
 
-	* se.fetch\[_one\](command, **parameters)
-	* parameters as in the documentation
-	* in the command, "{something}" and "{somethings}" are treated as placeholders for an int/str or a list of int/str, respectively
+* se.fetch\[_one\](command, **parameters)
+* parameters as in the documentation
+* in the command, "{something}" and "{somethings}" are treated as placeholders for an int/str or a list of int/str, respectively
 
 Example of usage:
 
