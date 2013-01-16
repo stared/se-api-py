@@ -75,8 +75,8 @@ class SEAPI():
     def fetch_one(self, command, subcommand=False, parse_curly_parameters=True, **kwargs):
         """Returns one page of results for a given command;
         EXAMPLE:
-        >>> seapi.fetch_one("users/{ids}", ids=[1,3,7,9,13], site=stackoverflow)
-        >>> seapi.fetch_one("posts", order=desc, sort=votes, site=stackoverflow, page=3)"""
+        >>> seapi.fetch_one("users/{ids}", ids=[1,3,7,9,13], site="stackoverflow")
+        >>> seapi.fetch_one("posts", order="desc", sort="votes", site="stackoverflow", page=3)"""
 
         parameters = self.default_params.copy()
 
@@ -107,7 +107,7 @@ class SEAPI():
 
     def fetch(self, command, starting_page=1, page_limit=2000, print_progress=True, min_delay=0.05, **kwargs):
         """Returns all pages (withing the limit) of results for a given command;
-        autimatically splits lists for {ids} in approperiate chunks
+        automatically splits lists for {ids} in appropriate chunks
         EXAMPLE -> check for fetch_one (without 'page' parameter!)
         NOTE: Here is a lot of room for improvements and additional features, e.g.:
         - gevent for concurrency to get optimal rate
